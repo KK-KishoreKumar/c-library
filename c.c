@@ -91,11 +91,17 @@ void csort(int *arr)
     int smallest;
     int found;
     while(*(arr+(spoint))!='\0')
+    {   
         smallest=ptrsmall(arr,spoint);
         found=ptrsearch(arr,smallest);
         cswap((arr+spoint),(arr+found));
         ++spoint;
+    }
 }
 int main()
 {
+    int arr[]={2,3,4,5,1};
+    csort(arr);
+    for(int i=0;arr[i]!='\0';++i)
+        printf("%d",arr[i]);
 }
