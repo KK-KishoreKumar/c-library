@@ -103,5 +103,5 @@ int main()
     int arr[]={2,3,4,5,1};
     csort(arr);
     for(int i=0;arr[i]!='\0';++i)
-        printf("%d",arr[i]);
+        printf("%d\n",arr[i]);
 }
