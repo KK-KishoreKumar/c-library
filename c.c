@@ -82,7 +82,7 @@ int arrsize(int array[])
     int i;
     for(i=0;array[i]!='\0';++i)
         ;
-    return i;
+    return i-1;
 }
 
 void csort(int *arr)
@@ -90,7 +90,7 @@ void csort(int *arr)
     int spoint=0;
     int smallest;
     int found;
-    while(arr[spoint+1]!='\0')
+    while(*(arr+(spoint))!='\0')
         smallest=ptrsmall(arr,spoint);
         found=ptrsearch(arr,smallest);
         cswap((arr+spoint),(arr+found));
@@ -98,8 +98,4 @@ void csort(int *arr)
 }
 int main()
 {
-    int arr[]={12,31,42,3};
-    csort(arr);
-    for(int i=0;arr[i]!='\0';++i)
-        printf("%d",arr[i]);
 }
