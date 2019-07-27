@@ -3,6 +3,7 @@
 int csearch(int array[],int element)
 {
     int i;
+    
     for(i=0;array[i]!=element;++i)
         ;
     return i;
@@ -11,6 +12,7 @@ int csearch(int array[],int element)
 int ptrsearch(int *array,int element)
 {
     int i;
+
     for(i=0;*(array+i)!=element;++i)
         ;
     return i;
@@ -20,7 +22,9 @@ int clarge(int array[],int startpoint)
 {
     int largest;
     int i;
+
     largest=array[0+startpoint];
+
     for(i=1+startpoint;array[i]!='\0';++i)
     {
         if (array[i]>largest)
@@ -33,7 +37,9 @@ int ptrlarge(int *array,int startpoint)
 {
     int largest;
     int i;
+
     largest=*(array+startpoint);
+
     for(i=1+startpoint;*(array+i)!='\0';++i)
     {
         if (*(array+i)>largest
@@ -47,7 +53,9 @@ int csmall(int array[],int startpoint)
 {
     int smallest;
     int i;
+
     smallest=array[0+startpoint];
+
     for(i=1+startpoint;array[i]!='\0';++i)
     {
         if (array[i]<smallest)
@@ -60,7 +68,9 @@ int ptrsmall(int *array,int startpoint)
 {
     int smallest;
     int i;
+
     smallest=*(array+startpoint);
+
     for(i=1+startpoint;*(array+i)!='\0';++i)
     {
         if (*(array+i)<smallest)
@@ -72,6 +82,7 @@ int ptrsmall(int *array,int startpoint)
 void cswap(int *a, int *b)
 {
     int temp;
+
     temp=*a;
     *a=*b;
     *b=temp;
@@ -80,6 +91,7 @@ void cswap(int *a, int *b)
 int arrsize(int array[])
 {
     int i;
+
     for(i=0;array[i]!='\0';++i)
         ;
     return i-1;
@@ -90,6 +102,7 @@ void csort(int *arr)
     int spoint=0;
     int smallest;
     int found;
+
     while(*(arr+(spoint))!='\0')
     {   
         smallest=ptrsmall(arr,spoint);
@@ -98,10 +111,17 @@ void csort(int *arr)
         ++spoint;
     }
 }
+
 int main()
 {
-    int arr[]={2,3,4,5,1};
+    int arr[5];
+
+    for(int p=0;p!=5;++p)
+        scanf("%d",&arr[p]);
+
     csort(arr);
+    printf("\nsorted:\n");
+
     for(int i=0;arr[i]!='\0';++i)
-        printf("%d\n",arr[i]);
+        printf("%d)  %d\n",i+1,arr[i]);   
 }
