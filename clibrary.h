@@ -1,13 +1,4 @@
-int csearch(int array[],int element)
-{
-    int i;
-    
-    for(i=0;array[i]!=element;++i)
-        ;
-    return i;
-}
-
-int ptrsearch(int *array,int element)
+int ptrsearch(int *array,int element,int n)
 {
     int i;
 
@@ -16,60 +7,29 @@ int ptrsearch(int *array,int element)
     return i;
 }
 
-int clarge(int array[],int startpoint)
-{
-    int largest;
-    int i;
-
-    largest=array[0+startpoint];
-
-    for(i=1+startpoint;array[i]!='\0';++i)
-    {
-        if (array[i]>largest)
-            largest = array[i];
-    }
-    return largest;
-}
-
-int ptrlarge(int *array,int startpoint)
+int ptrlarge(int *array,int startpoint,int n)
 {
     int largest;
     int i;
 
     largest=*(array+startpoint);
 
-    for(i=1+startpoint;*(array+i)!='\0';++i)
+    for(i=1+startpoint;i!=n;++i)
     {
-        if (*(array+i)>largest
-    )
+        if (*(array+i)>largest)
             largest = *(array+i);
     }
     return largest;
 }
 
-int csmall(int array[],int startpoint)
-{
-    int smallest;
-    int i;
-
-    smallest=array[0+startpoint];
-
-    for(i=1+startpoint;array[i]!='\0';++i)
-    {
-        if (array[i]<smallest)
-            smallest = array[i];
-    }
-    return smallest;
-}
-
-int ptrsmall(int *array,int startpoint)
+int ptrsmall(int *array,int startpoint, int n)
 {
     int smallest;
     int i;
 
     smallest=*(array+startpoint);
 
-    for(i=1+startpoint;*(array+i)!='\0';++i)
+    for(i=1+startpoint;i!=n;++i)
     {
         if (*(array+i)<smallest)
             smallest = *(array+i);
@@ -86,26 +46,19 @@ void cswap(int *a, int *b)
     *b=temp;
 }
 
-int arrsize(int array[])
+void csort(int *arr,int n)
 {
-    int i;
-
-    for(i=0;array[i]!='\0';++i)
-        ;
-    return i-1;
-}
-
-void csort(int *arr)
-{
+    int i=0;
     int spoint=0;
     int smallest;
     int found;
 
-    while(*(arr+(spoint))!='\0')
+    while(i!=n)
     {   
-        smallest=ptrsmall(arr,spoint);
-        found=ptrsearch(arr,smallest);
+        smallest=ptrsmall(arr,spoint,n);
+        found=ptrsearch(arr,smallest,n);
         cswap((arr+spoint),(arr+found));
         ++spoint;
+        ++i;
     }
 }
