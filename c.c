@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int ptrsearch(int *array,int element,int n)
+int ptrsearch(const int *&array,const int& element,const int& n)
 {
     int i;
 
@@ -9,7 +9,7 @@ int ptrsearch(int *array,int element,int n)
     return i;
 }
 
-int ptrlarge(int *array,int startpoint,int n)
+int ptrlarge(const int *&array,const int& startpoint,const int& n)
 {
     int largest;
     int i;
@@ -65,6 +65,11 @@ void csort(int *arr,int n)
     }
 }
 
+int sizet(int arr[])
+{
+    return sizeof(arr)/sizeof(int);
+}
+
 int main()
 {
     int arr[100];
@@ -81,4 +86,6 @@ int main()
     printf("output:\n");
     for (int p=0;p<size;++p)
         printf("%d\n",arr[p]);
+    int array[] = {1, 2, 34, 5};
+    printf("\n%d",sizet(array));
 }
