@@ -3,8 +3,7 @@
 
 int main()
 {
-    int arr[5];
-    int n=&(arr)[1]-arr;
-    printf("%d",n);
+    int arr[2]={20,2};
+    arrswap(arr,0, 1);
+    printf("%d %d",arr[0],arr[1]);
 }
-

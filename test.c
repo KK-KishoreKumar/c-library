@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-void arrswap(int array[],int n1,int n2)
+void arrswap(int *array,int n1,int n2)
 {
-    int temp=array[n1];
-    array[n1]=array[n2];
-    array[n2]=temp;
+    int temp=*(array+n1);
+    *(array+n1)=*(array+n2);
+    *(array+n2)=temp;
 }
 
 void cswap(int *a, int *b)
@@ -19,7 +19,7 @@ void cswap(int *a, int *b)
 int main()
 {
     int arr[2]={20,2};
-    //cswap(arr,arr+1);
-    arrswap(arr,1,2);
+    // cswap(arr,arr+1);
+    arrswap(arr,0, 1);
     printf("%d %d",arr[0],arr[1]);
 }

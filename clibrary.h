@@ -66,3 +66,10 @@ void csort(int *arr,int n)
         ++i;
     }
 }
+
+void arrswap(int *array,int n1,int n2)
+{
+    int temp=*(array+n1);
+    *(array+n1)=*(array+n2);
+    *(array+n2)=temp;
+}
