@@ -2,8 +2,12 @@ int ptrsearch(int *array,int element,int n)
 {
     int i;
 
-    for(i=0;*(array+i)!=element;++i)
-        ;
+    int b = 1;
+    for (i=0;*(array+i)==element&&i < n;++i)
+        b = 0;
+    if (b)
+        return -1;
+    for(i=0;*(array+i)!=element;++i);
     return i;
 }
 
