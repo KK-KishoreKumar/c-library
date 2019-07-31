@@ -3,7 +3,18 @@
 
 int main()
 {
-    int arr[2]={20,2};
-    arrswap(arr,0, 1);
-    printf("%d %d",arr[0],arr[1]);
+    int arr[100];
+    int size;
+
+    printf("size:");
+    scanf("%d",&size);
+    printf("input:\n");
+
+    for(int i=0;i<size;++i)
+        scanf("%d",&arr[i]);
+        
+    csort(arr,size);
+    printf("output:\n");
+    for (int p=0;p<size;++p)
+        printf("%d\n",arr[p]);
 }

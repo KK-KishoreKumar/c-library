@@ -1,13 +1,8 @@
 int ptrsearch(int *array,int element,int n)
 {
     int i;
-
-    int b = 1;
-    for (i=0;*(array+i)==element&&i < n;++i)
-        b = 0;
-    if (b)
-        return -1;
-    for(i=0;*(array+i)!=element;++i);
+    for(i=0;*(array+i)!=element;++i)              //i deleted the error handling thing as it causes runtime error, and it is not useful at all in this code
+        ;                                        //becuz the element that are needed to put in is get out of ptrsmall so the element must be in the array
     return i;
 }
 
