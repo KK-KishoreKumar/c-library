@@ -20,6 +20,6 @@ int main()
 {
     int arr[2]={20,2};
     cswap(arr,arr+1);
-    arrswap(arr,0, 1);              //result should be just the same becuz swapped 2 times
+    printf("swapped:");                 //result should be just the same becuz swapped 2 times
     printf("%d %d",arr[0],arr[1]);
 }
